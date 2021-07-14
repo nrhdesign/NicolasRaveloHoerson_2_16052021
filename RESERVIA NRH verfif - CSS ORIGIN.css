@@ -1,0 +1,506 @@
+
+/* CONFIGURATION PRINCIPALE */
+
+* {
+  margin: 0;
+}
+
+html {
+  width: 100%
+}
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;                        /*par défaut pour utiliser les em */
+  margin: 0;
+  max-width: 100%;
+}
+
+
+#container {
+	width: 100%;
+	max-width: 1354px;
+}
+
+a {
+  text-decoration: none;               /* RETIRER/CACHER LES LIENS HYPERTEXTES  */
+  color: black;
+}
+h1 {
+  color: black;
+  font-size: 1.4em;
+}
+ul {
+  list-style: none;
+}
+
+
+
+/* HEADER NAVIGATION ******************************************************************** */
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+
+/* HEADER IMG (LOGO) + <NAV> + SINQSCRIRE */
+.navmain {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* LOGO "WIEW WIDTH" + HEIGHT AUTO (conseil workplace) */
+#logo {
+  margin: 3vw 3vw 1.5vw 3.5vw;        /* "WIEW WIDTH" Top 3, Right 3, down 1,5, left 3,5 (conseil workplace) */
+	width: 100px;                       /* Taille */
+  height:auto;                        /* AUTO (conseil workplace) */
+  margin-top: 25px;                   /* Hauteur marge */
+	padding: 35px 0 0 50px;
+  position: absolute;                 /* Garder la même Taille */
+}
+
+
+/* IMG (LOGO) + <NAV> + SINSCRIRE */
+.container-nav {                          
+  display: flex;
+  justify-content: space-between;
+}
+
+/* IMG (LOGO) + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
+.container-nav a:hover {
+  color: #0065fc;
+}
+
+/* <NAV (GLOBAL) IMG + MENU + SINSCRIRE
+.navmain {
+  display: flex;
+} 
+
+/* <NAV (GLOBAL)> 01 Hébergement + Activités */
+nav {
+  display: flex;
+  padding-right: 0;
+}  
+/* <NAV> 02 Hébergement + Activités (alignement en hauteur)*/
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 0;
+  margin-right: 2vw;
+  
+     /* EN TEST ***************** */
+}
+/* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
+nav ul li {
+  border-top: solid 2.5px transparent;
+  padding: 38px 30px 0 30px;
+}
+/* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
+nav ul li:hover {
+  border-top: solid 2.5px #0065fc;
+}
+/* ************************************************************ */
+
+
+
+
+
+.sinscrire {
+  font-weight: bolder; /*GRAS*/
+  font-size: 16px;
+  color: #0065fc;
+  float: right;
+  margin-right: 5vw;
+  padding-top: 38px;
+}
+
+/* MAIN SECTION - RECHERCHE ***************************************************************************  */
+#recherche {
+	padding: 50px 0px 30px 50px;
+}
+
+#recherche_titre {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.recherche_ville {
+	display: flex;
+	flex-direction: row;
+	margin: 20px 0 30px 0;
+}
+
+#mapmarker {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	border-radius: 15px 0 0 15px;
+	background-color: var(--lightgrey)
+}
+
+#search {
+	height: 50px;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bolder;
+	font-size: 15px;
+	border: solid 1px var(--lightgrey);
+	padding: 15px;
+}
+
+::placeholder {
+	color: black;
+}
+
+#search:focus {
+	border-color:var(--blue);
+	outline: var(--blue);
+}
+
+
+/* MAIN Recherche CONTAINER  */
+.recherche h1 {
+  margin-left: 3.3vw;
+  font-size: 22px;
+  margin-top: 1vw;
+  margin-right: 20px;
+  clear: left;
+}
+  .recherche p {
+    margin-left:0;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+/* SEARCH - LIGNE RECHERCHE ************************************************************************ */
+/* RECHERCHE */
+.search {
+  display: flex;
+  margin-left: 3.3vw;
+  height: 50px;
+  margin-bottom: 30px;                 /* */
+}
+
+/* 01 icon MAPMAKER */
+.mapmarker {
+  min-width: 60px;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  font-size: 1.2em;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+/* 02 BARRE DE Recherche */
+.searchfield {
+  width: 12rem;
+  border-top: solid #f2f2f2 1px;
+  border-bottom: solid #f2f2f2 1px;
+  border-left: none;
+  border-right: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: initial;
+  padding-left: 20px;
+}
+
+/* 03 BOUTON Recherche BUTTON */
+.searchbutton {
+  width: 132px;
+  background-color: #0065fc;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: initial;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+
+ /* SECTION FILTRES *************************************************************** **/
+ .filter {
+  margin-left: 3.3vw;
+ }
+
+ /* 01 H2 TITRE FILTRES **/
+.filterstitle {
+  float: left;
+  margin-right: 2.2vw;
+  padding-top: 0px;
+}
+
+
+/*  FILTRES ** Tous les BOUTONS ECONOMIQUE FAMILIAL ROMANTIQUE ANIMAUX AUTORISES ************************** **/
+.filter-button {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 1.5vmax;
+  border-top: solid #e0e0e0 2px;
+  border-right: solid #e0e0e0 2px;
+  border-bottom: solid #e0e0e0 2px;
+  border-left: none;
+  border-radius: 60px;
+  padding: 0.9em;
+  padding-left: 0;
+}
+.filter-button:hover {
+  background-color: #f1f7ff;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+
+/* ICON FILTRES - Eco Fam Romant Animaux autorisés ******* **/
+.filtericon {
+  background-color: #deebff;
+  padding: 17px 16px 17px 18px;
+  margin-right: 15px;
+  border-radius: 50%;
+  color: #0065fc;
+}
+
+
+.icone-info{ /** infoicon*/
+  float: left;
+  margin-right: 12px;
+  font-size: 0.8em;
+  border: solid #f2f2f2 2px;
+  border-radius: 50%;
+  color: #0065fc;
+  padding: 0.4em 0.85em;
+}
+/** 500 LOGEMENTS DISPONIBLES **/
+.filter p {
+margin-top: 28px;
+font-size: 1em;
+}
+
+
+/** ASIDE : COLONNES POPULAIRES et HEBERGEMENTS (Container) **/
+.populaires {
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 31%;
+  margin-top: 2.5vw;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.container {
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  margin-top: 2.5vw;
+  width: 67%;
+}
+
+/** BOX - BOX POPULAIRES **/
+.boxpopulaires {
+  display: inline-block;
+  padding: 0.35em;
+  width: 23vw;
+  height: 9.5vw;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 4px 2px 20px rgb(201 201 201);
+  box-shadow: 4px 2px 20px rgb(201 201 201);
+}
+
+.imagepopulaires {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 40%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  float: left;
+  padding-right: 10px;
+  margin-right: 0.8vw;
+}
+
+.asidepopulaires {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* SECTION HEBERGEMENTS **************** */
+
+.boxhebergements {
+  width: 16.5vw;
+  height: 13vw;
+  background-color: white;
+  border-radius: 25px;
+  padding: 0.35em;
+  margin: 10px 0 25px 0;
+  -webkit-box-shadow: 4px 2px 20px rgb(201, 201, 201);
+  box-shadow: 4px 2px 20px rgb(201, 201, 201);
+}
+
+
+.imagehebergements {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 59%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+
+
+
+/* SECTION ACTIVITES **************** */
+.sectionactivites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 3.3vw 3.5vw;
+  height: 31.5vw;
+}
+
+.boxactivites_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.boxactivites_2 {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 0;
+}
+
+.boxactivites_a {
+  width: 21vw;
+  padding: 0;
+  margin: 0;
+}
+
+.boxactivites_b {
+  width: 21vw;
+  height: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.boxactivites_c {
+  width: 21vw;
+  height: 41%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.imageactivites_a {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 85%;
+  padding-bottom: 10px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.imageactivites_b {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 70%;
+  padding-bottom: 10px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.imageactivites_c {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 63%;
+  padding-bottom: 10px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+figure {
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 20px rgb(230, 230, 230);
+  box-shadow: 2px 2px 20px rgb(230, 230, 230);
+}
+
+figcaption {
+  font-weight: bold;
+  font-size: 1.2vmax;
+  margin-left: 1.4em;
+  margin-top: 0.3em;
+}
+
+
+
+/* ETOILES BLEUES et GRISES BAD ou GOOD */
+
+
+
+
+/* FOOTER  **************************************** **/
+
+footer {
+  background-color: #f2f2f2;
+  display: flex;
+  margin: 0 -3.0em 0 -3.0em;
+  padding: 1.0em 0 3.0em 3.0em;
+  font-size: 1.0em;
+  flex-flow: row wrap;
+}
+
+footer h3 {
+  padding-top: 2.0em;
+  padding-bottom: 0.5em;
+}
+footer div  {
+  margin-right: 15.0em;
+}
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  margin: 1.0em 0;
+}

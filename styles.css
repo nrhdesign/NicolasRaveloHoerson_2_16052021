@@ -1,7 +1,171 @@
-h1 {
-    color: red;
+
+/* CONFIGURATION PRINCIPALE */
+
+* {
+  margin: 0;
+}
+
+html {
+  width: 100%
+  overflow-x: hidden;                      /* Rognage, dépasse des bords droit et gauche de la boîte de contenu */
 }
 
 body {
-font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;                        /*par défaut pour utiliser les em */
+  margin: 0;
+  max-width: 100%;
+}
+
+
+a {
+  text-decoration: none;               /* RETIRER/CACHER LES LIENS HYPERTEXTES  */
+  color: black;
+}
+h1 {
+  color: black;
+  font-size: 1.4em;
+}
+ul {
+  list-style: none;
+}
+
+
+
+/* HEADER NAVIGATION ******************************************************************** */
+
+#container-nav {
+	width: 100%;
+}
+
+header {   /* LOGO + Class NAVMAIN */
+	display: flex;
+	justify-content: space-between;
+  margin: 0;
+}
+
+
+.navmain {   /* Class HEBERGEMENTS et ACTIVITES */
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* LOGO "WIEW WIDTH" + HEIGHT AUTO (conseil workplace) */
+#logo {
+  margin: 3vw 3vw 1.5vw 3.5vw;        /* "WIEW WIDTH" Top 3, Right 3, down 1,5, left 3,5 (conseil workplace) */
+	width: 100px;                       /* Taille */
+  height:auto;                        /* AUTO (conseil workplace) */
+  margin-top: 25px;                   /* Hauteur marge */
+	padding: 35px 0 0 50px;
+  position: absolute;                 /* Garder la même Taille */
+}
+
+/* IMG (LOGO) + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
+.container-nav a:hover {
+  color: #0065fc;
+}
+
+/* <img> + <nav_bar> + <lightblue-link"> */
+.container-nav {                       /* Header (logo + navbar "hebergement activités s'inscrire") */                  
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-nav a:hover {                /* SURVOL */
+  color: #0065fc;
+}
+
+/* <NAV (GLOBAL)> 01 Hébergement + Activités */
+nav {
+  display: flex;
+  padding-right: 0;
+}  
+/* <NAV> 02 Hébergement + Activités (alignement en hauteur)*/
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 0;
+  margin-right: 2vw;
+}
+
+
+
+
+nav ul li { /* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
+  border-top: solid 2.5px transparent;
+  padding: 38px 30px 0 30px;
+}
+
+nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
+  border-top: solid 2.5px #0065fc;
+}
+
+
+
+
+
+
+
+
+
+.sinscrire {
+  font-weight: bolder; /*GRAS*/
+  font-size: 16px;
+  color: #0065fc;
+  float: right;
+  margin-right: 5vw;
+  padding-top: 38px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  display: flex;
+  background-color: #f2f2f2;
+  padding-bottom: 30px;
+  padding-top: 40px;
+}
+footer h5 {
+  font-size: 1.2vw;
+  margin-bottom: 1.4em;
+  padding: 0;
+}
+footer ul {
+  padding: 0;
+}
+footer ul li {
+  list-style-type: none;
+  margin-bottom: 1.2em;
+  font-size: 1.1vw;
+}
+.apropos {
+  margin-right: 13vw;
+  margin-left: 3.5vw;
+}
+.noshebergementsfooter {
+  margin-right: 13vw;
+  margin-left: 3.5vw;
+}
+.assistance {
+  margin-right: 13vw;
+  margin-left: 3.5vw;
+}
+.apropos ul li:hover,
+.noshebergementsfooter ul li:hover,
+.assistance ul li:hover {
+  -webkit-text-stroke: 1px black;
 }
