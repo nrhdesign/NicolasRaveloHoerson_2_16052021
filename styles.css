@@ -1,171 +1,138 @@
 
 /* CONFIGURATION PRINCIPALE */
 
-* {
-  margin: 0;
-}
 
 html {
-  width: 100%
-  overflow-x: hidden;                      /* Rognage, dépasse des bords droit et gauche de la boîte de contenu */
+  width:100%;
 }
 
-body {
+
+body{
   font-family: "Raleway", sans-serif;
-  font-size: 16px;                        /*par défaut pour utiliser les em */
-  margin: 0;
+  font-size: 18px;         /* 16px par défaut pour utiliser les em */
+  margin: auto;
   max-width: 100%;
+  display: flex;
+  justify-content:center;
 }
+
+
 
 
 a {
-  text-decoration: none;               /* RETIRER/CACHER LES LIENS HYPERTEXTES  */
+  text-decoration: none;
   color: black;
 }
-h1 {
-  color: black;
-  font-size: 1.4em;
+
+a:hover {
+  color: #0065fc;
 }
+
+
 ul {
-  list-style: none;
+  list-style-type: none;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 
 
 /* HEADER NAVIGATION ******************************************************************** */
 
+
 #container-nav {
-	width: 100%;
+  width: 100%;   /* Permettre une marge à toute la page du HEADER jusqu'au FOOTER */
 }
 
-header {   /* LOGO + Class NAVMAIN */
-	display: flex;
-	justify-content: space-between;
-  margin: 0;
-}
-
-
-.navmain {   /* Class HEBERGEMENTS et ACTIVITES */
-  display: flex;
-  justify-content: space-between;
-}
-
-
-/* LOGO "WIEW WIDTH" + HEIGHT AUTO (conseil workplace) */
-#logo {
-  margin: 3vw 3vw 1.5vw 3.5vw;        /* "WIEW WIDTH" Top 3, Right 3, down 1,5, left 3,5 (conseil workplace) */
-	width: 100px;                       /* Taille */
-  height:auto;                        /* AUTO (conseil workplace) */
-  margin-top: 25px;                   /* Hauteur marge */
-	padding: 35px 0 0 50px;
-  position: absolute;                 /* Garder la même Taille */
-}
 
 /* IMG (LOGO) + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
 .container-nav a:hover {
   color: #0065fc;
 }
 
-/* <img> + <nav_bar> + <lightblue-link"> */
-.container-nav {                       /* Header (logo + navbar "hebergement activités s'inscrire") */                  
-  display: flex;
-  justify-content: space-between;
+
+
+
+* {    /* <a href "#"= class="sinscrire*>S'inscrire/</a> */
+  margin: 0;
+  padding: 0;
+
 }
 
-.container-nav a:hover {                /* SURVOL */
-  color: #0065fc;
+
+header {   /* LOGO + Class NAVMAIN */
+  background-color: yellow;
+  display:flex;
+  flex-direction:row;                 /* ORDRE des items (inversé - en colonne etc..) */
+  justify-content: space-between;    /* nav espacée complètement à droite */
 }
 
-/* <NAV (GLOBAL)> 01 Hébergement + Activités */
-nav {
+
+#logo{
+background-color:aquamarine;
+display:flex;
+justify-self: flex-start;
+width:100px;
+height: auto;
+margin:3vw 3vw 1.5vw 2.5vw;                   /* Hauteur marge */
+}
+
+
+
+nav ul { /* CLASS "nav_bar" */
+  background-color: tomato;
   display: flex;
-  padding-right: 0;
-}  
-/* <NAV> 02 Hébergement + Activités (alignement en hauteur)*/
-nav ul {
-  display: flex;
-  list-style-type: none;
+  align-items: center;
+  list-style:none;                /* NONE = pas de puce */
   margin-top: 0;
-  margin-right: 2vw;
+  margin-right: 0;              /* pour l'espace à partir de la DROITE= 0vw */
 }
 
-
-
+nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
+  padding: 0px;
+  justify-content:flex-start;
+}
 
 nav ul li { /* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
-  border-top: solid 2.5px transparent;
-  padding: 38px 30px 0 30px;
+  border-top: solid 2.5px 
+  ;
+  padding: 10px 15px 0 15px;          /* haut droite bas gauche */
 }
-
 nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
-  border-top: solid 2.5px #0065fc;
+  border-top: solid 5.5px #0065fc;
 }
 
+/* ************************************************************ */
 
 
-
-
-
+.navmain {
+  padding: 50px 25px 50px 30px;        /* haut droite bas gauche */
+	border-top: solid 5.5px transparent;
+  padding-bottom: 50px;
+  padding-top: 5 0px;
+}
 
 
 
 .sinscrire {
-  font-weight: bolder; /*GRAS*/
-  font-size: 16px;
+  font-weight: bolder;
+  font-size: 18px;
   color: #0065fc;
   float: right;
-  margin-right: 5vw;
-  padding-top: 38px;
+
+  padding: 0 50px 30px 50px;       /* haut droite bas gauche */
+	border-top: solid 2.5px transparent;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
-  display: flex;
-  background-color: #f2f2f2;
-  padding-bottom: 30px;
-  padding-top: 40px;
-}
-footer h5 {
-  font-size: 1.2vw;
-  margin-bottom: 1.4em;
-  padding: 0;
-}
-footer ul {
-  padding: 0;
-}
-footer ul li {
-  list-style-type: none;
-  margin-bottom: 1.2em;
-  font-size: 1.1vw;
-}
-.apropos {
-  margin-right: 13vw;
-  margin-left: 3.5vw;
-}
-.noshebergementsfooter {
-  margin-right: 13vw;
-  margin-left: 3.5vw;
-}
-.assistance {
-  margin-right: 13vw;
-  margin-left: 3.5vw;
-}
-.apropos ul li:hover,
-.noshebergementsfooter ul li:hover,
-.assistance ul li:hover {
-  -webkit-text-stroke: 1px black;
+.lightblue-link {       /* S'inscrire */
+  padding: 50px 30px 25px 5px;         /* haut droite bas gauche */
+	border-top: solid 5.5px transparent;
 }
