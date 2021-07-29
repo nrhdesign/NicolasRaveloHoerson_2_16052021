@@ -18,9 +18,6 @@ body{
   overflow-x: hidden;
 }
 
-
-
-
 a {
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -90,11 +87,26 @@ margin:3vw 3vw 1.5vw 2.5vw;                   /* Hauteur marge */
 
 
 nav ul { /* CLASS "nav_bar" */
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   background-color: white;
   display: flex;
 }
 
+
+/* NAV MOBILE */
+.navigationmobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
 nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   justify-content:flex-start;
   align-items: center;
@@ -172,6 +184,9 @@ nav li, nav a {
 
 
 #recherche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
 	padding: 50px 0px 30px 50px;
 }
 
@@ -187,6 +202,8 @@ nav li, nav a {
 }
 
 #mapmarker {
+ 
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -231,6 +248,14 @@ nav li, nav a {
 /* 01 icon MAPMAKER */
 .mapmarker {
   min-width: 60px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+
 
   justify-content: center;
   display: flex;
@@ -339,6 +364,11 @@ nav li, nav a {
   background-color: #f1f7ff;
   transform: scale(1.05);
   transition: 0.4s;
+
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
 
@@ -360,6 +390,11 @@ main {  /* FULL div "Container-hebergement" */
   display: flex;
   justify-content: space-between;
   margin: 0 3.3vw;
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+
+
 }
 
 h2 {     /** Hebergement Marseille **/
@@ -379,6 +414,13 @@ h2 {     /** Hebergement Marseille **/
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 20px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+
 }
 
 .boxhebergements {
@@ -389,10 +431,19 @@ h2 {     /** Hebergement Marseille **/
   padding: 0.35em;
   margin: 10px 0 25px 0;
   box-shadow: 4px 2px 20px rgb(201, 201, 201);
+
+  -webkit-box-shadow: 4px 2px 20px rgb(201, 201, 201);
 }
+
+
 .boxhebergements:hover {
   transform: scale(1.05);
   transition: 0.4s;
+
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
 .imagehebergements {
@@ -401,6 +452,8 @@ h2 {     /** Hebergement Marseille **/
   width: 100%;
   height: 59%;
   object-fit: cover;
+
+  -o-object-fit: cover;
 }
 
 /*ETOILES - Hebergements */
@@ -469,10 +522,18 @@ p {
   background-color: white;
   border-radius: 20px;
   box-shadow: 4px 2px 20px rgb(201 201 201);
+
+  -webkit-box-shadow: 4px 2px 20px rgb(201, 201, 201);
+  box-shadow: 4px 2px 20px rgb(201, 201, 201);
 }
 .boxpopulaires:hover {
   transform: scale(1.05);
   transition: 0.4s;
+
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
 .imagepopulaires {
@@ -626,5 +687,233 @@ footer ul li {
   margin-left: 3.5vw;
 }
 
+/**********************************************************************************************************/
+/***************************************Media Queries MOBILES ********************************/
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  h1 {
+    margin: 20px 15px 0px 6px;
+    padding-top: 25px;
+  }
+  .recherche p {
+    margin: 10px 6px 35px 6px;
+  }
+  .search {
+    width: 90%;
+    margin: 20px 6px 10px 6px;
+  }
+  .searchfield {
+    width: 80%;
+  }
+  .searchbutton {
+    display: none;
+  }
+  #searchbutton {
+    color: white;
+    background-color: #0065fc;
+  }
+  .filterstitle {
+    width: 100%;
+    margin: 10px 0px 10px 6px;
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin: 0;
+  }
+  .container h2,
+  .populaires h2 {
+    margin: 35px 10px 10px 25px;
+    font-size: 4.5vmax;
+  }
+  .populaires p {
+    font-size: 3vw;
+    margin-bottom: 0;
+  }
+  .principal p {
+    font-size: 3vw;
+  }
+  .charticon {
+    font-size: 4.5vmax;
+    margin: 22px 10px 0px 0px;
+  }
+  .principal h4,
+  .populaires h4 {
+    font-size: 3.7vw;
+  }
+  figcaption {
+    font-size: 3vmax;
+    margin-top: 2.5vmax;
+  }
+  .etoiles,
+  .etoilegrise,
+  .etoilespopulaires {
+    font-size: 3vw;
+  }
+  .etoilespopulaires {
+    font-size: 3vw;
+    margin-top: 15vw;
+  }
+  .populaires .etoilegrise {
+    font-size: 3vw;
+  }
+  .boxpopulaires:nth-child(2) .etoilespopulaires {
+    margin-top: 11vw;
+  }
+  .populaires {
+    border-radius: 0;
+    margin-top: 30px;
+  }
+  .boxpopulaires p {
+    margin-bottom: 8vw;
+  }
+  .asidepopulaires {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .boxpopulaires {
+    width: 85%;
+    height: 142px;
+    margin-bottom: 5px;
+  }
+  .imagepopulaires {
+    margin-right: 2.5vw;
+  }
+  .principal {
+    margin-bottom: 10px;
+  }
+  .container {
+    background-color: white;
+    margin-top: 10px;
+  }
+  .boxhebergements {
+    width: 85%;
+    height: 190px;
+  }
+  .plusderesultats {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+  #Activites {
+    width: 100vw;
+    margin: 0;
+  }
+  #Activites h2 {
+    font-size: 5vmax;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+  .sectionactivites {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  .boxactivites_1 {
+    width: 85%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .boxactivites_2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 85%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .boxactivites_a,
+  .boxactivites_b,
+  .boxactivites_c {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 25px;
+  }
+  .imageactivites_a,
+  .imageactivites_b,
+  .imageactivites_c {
+    height: 135px;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  footer h5 {
+    font-size: 18px;
+  }
+  footer ul {
+    padding: 3px 0 10px 0;
+  }
+  footer ul li {
+    font-size: 16px;
+  }
+  .apropos,
+  .hebergementsfooter,
+  .assistance {
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+  }
 
 
+/***********************************************************************************************************/
+/***************************************Media Quesries For mobile (landscape) ************************/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+
+/***********************************************************************************************************/
+/***************************************Media Queries TABLETS ************************/
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .container {
+    padding-bottom: 25px;
+  }
+  .principal {
+    margin-bottom: 1vw;
+  }
+  .boxhebergements {
+    width: 22vw;
+    height: 17vw;
+  }
+  .imagepopulaires {
+    padding-right: 0.6vw;
+  }
+  .plusderesultats {
+    font-size: 1.6vw;
+  }
+}
+  }
+
+
+/***********************************************************************************************************/
+/***************************************Media Queries SMALL DESKTOP ************************/
+
+@media only screen and (min-width: 980px) and (max-width: 1023px) {
+
+}
+
+
+/***********************************************************************************************************/
+/***************************************Media Queries  NORMAL DESKTOP ************************/
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+}
