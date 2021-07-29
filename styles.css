@@ -2,6 +2,7 @@
 /* CONFIGURATION PRINCIPALE */
 
 
+
 html {
   width:100%;
 }
@@ -9,11 +10,12 @@ html {
 
 body{
   font-family: "Raleway", sans-serif;
+  margin: 0;
   font-size: 18px;         /* 16px par défaut pour utiliser les em */
-  margin: auto;
   max-width: 100%;
   display: flex;
   justify-content:center;
+  overflow-x: hidden;
 }
 
 
@@ -21,7 +23,7 @@ body{
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 a:hover {
@@ -90,24 +92,26 @@ margin:3vw 3vw 1.5vw 2.5vw;                   /* Hauteur marge */
 nav ul { /* CLASS "nav_bar" */
   background-color: tomato;
   display: flex;
-  align-items: center;
-  list-style:none;                /* NONE = pas de puce */
-  margin-top: 0;
-  margin-right: 0;              /* pour l'espace à partir de la DROITE= 0vw */
 }
 
 nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
-  padding: 0px;
+  display: flex;
   justify-content:flex-start;
+  align-items: center;
+	padding: 0;
 }
 
 nav ul li { /* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
-  border-top: solid 2.5px 
-  ;
+  border-top: solid 2.5px ;
   padding: 10px 15px 0 15px;          /* haut droite bas gauche */
 }
 nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
-  border-top: solid 5.5px #0065fc;
+  border-top: solid 2.5px #0065fc;
+}
+
+nav li, nav a {
+	list-style: none;
+	color: black;
 }
 
 /* ************************************************************ */
@@ -117,22 +121,510 @@ nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
   padding: 50px 25px 50px 30px;        /* haut droite bas gauche */
 	border-top: solid 5.5px transparent;
   padding-bottom: 50px;
-  padding-top: 5 0px;
 }
 
-
+.navmain a:hover {
+  color: #0065fc;
+}
 
 .sinscrire {
   font-weight: bolder;
   font-size: 18px;
   color: #0065fc;
   float: right;
-
-  padding: 0 50px 30px 50px;       /* haut droite bas gauche */
+  padding: 0 50px 38px 50px;       /* haut droite bas gauche */
 	border-top: solid 2.5px transparent;
 }
 
 .lightblue-link {       /* S'inscrire */
-  padding: 50px 30px 25px 5px;         /* haut droite bas gauche */
+  padding: 50px 0px 25px 5px;         /* haut droite bas gauche */
 	border-top: solid 5.5px transparent;
 }
+.lightblue-link a:hover{       /* S'inscrire */
+       /* haut droite bas gauche */
+	border-top: solid 5.5px transparent;
+}
+
+/* MAIN SECTION - RECHERCHE ***************************************************************************  */
+
+/* MAIN Recherche CONTAINER  */
+.recherche h1 {
+  margin-left: 2.3vw;
+  font-size: 22px;
+  margin-top: 1vw;
+  margin-right: 20px;
+  clear: left;
+}
+  .recherche p {
+    margin-left:2.3vw;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+.search {
+  margin-left:2.3vw;
+}
+.filter {
+  margin-left:2.3vw;
+}
+
+
+
+
+
+#recherche {
+	padding: 50px 0px 30px 50px;
+}
+
+#recherche_titre {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.recherche_ville {
+	display: flex;
+	flex-direction: row;
+	margin: 20px 0 30px 0;
+}
+
+#mapmarker {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	border-radius: 15px 0 0 15px;
+	background-color: var(--lightgrey)
+}
+
+#search {
+	height: 50px;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bolder;
+	font-size: 15px;
+	border: solid 1px var(--lightgrey);
+	padding: 15px;
+}
+
+::placeholder {
+	color: black;
+}
+
+#search:focus {
+	border-color:var(--blue);
+	outline: var(--blue);
+}
+
+
+
+
+/* SEARCH - LIGNE RECHERCHE ************************************************************************ */
+/* RECHERCHE */
+.search {
+  display: flex;
+  margin-left: 3.3vw;
+  height: 50px;
+  margin-bottom: 30px;                 /* */
+}
+
+/* 01 icon MAPMAKER */
+.mapmarker {
+  min-width: 60px;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  font-size: 1.2em;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+/* 02 BARRE DE Recherche */
+.searchfield {
+  width: 12rem;
+  border-top: solid #f2f2f2 1px;
+  border-bottom: solid #f2f2f2 1px;
+  border-left: none;
+  border-right: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: initial;
+  padding-left: 20px;
+}
+
+/* 03 BOUTON Recherche BUTTON */
+.searchbutton {
+  width: 132px;
+  background-color: #0065fc;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: initial;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+
+/* SECTION FILTRES *************************************************************** **/
+.filter {
+  margin-left: 3.3vw;
+ }
+
+
+
+ /* 01 H2 TITRE FILTRES **/
+.filterstitle {
+  float: left;
+  margin-right: 2.2vw;
+  padding-top: 15px;
+}
+
+/*  FILTRES ** Tous les BOUTONS ECONOMIQUE FAMILIAL ROMANTIQUE ANIMAUX AUTORISES ************************** **/
+.filter-button {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 1.5vmax;
+  border-top: solid #e0e0e0 2px;
+  border-right: solid #e0e0e0 2px;
+  border-bottom: solid #e0e0e0 2px;
+  border-left: none;
+  border-radius: 60px;
+  padding: 0.9em;
+  padding-left: 0;
+}
+.filter-button:hover {
+  background-color: #f1f7ff;
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+/* ICON FILTRES - Eco Fam Romant Animaux autorisés ******* **/
+.filtericon {
+  background-color: #deebff;
+  padding: 17px 16px 17px 18px;
+  margin-right: 15px;
+  border-radius: 50%;
+  color: #0065fc;
+}
+
+.infoicon{ /** infoicon*/
+  float: left;
+  margin-right: 12px;
+  font-size: 0.8em;
+  border: solid #f2f2f2 2px;
+  border-radius: 50%;
+  color: #0065fc;
+  padding: 0.4em 0.85em;
+}
+
+.icontextfilters {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 1.5vmax;
+  border-top: solid #e0e0e0 2px;
+  border-right: solid #e0e0e0 2px;
+  border-bottom: solid #e0e0e0 2px;
+  border-left: none;
+  border-radius: 60px;
+  padding: 0.9em;
+  padding-left: 0;
+}
+.icontextfilters:hover {
+  background-color: #f1f7ff;
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+
+/** 500 LOGEMENTS DISPONIBLES **/
+
+
+/********************************* **/
+
+.filter p {
+margin-top: 28px;
+font-size: 1em;
+}
+
+
+
+/* SECTION HEBERGEMENTS **************** */
+
+main {  /* FULL div "Container-hebergement" */
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3.3vw;
+}
+
+h2 {     /** Hebergement Marseille **/
+  font-size: 1.7vmax;
+  margin: 3.3vw 0 1.2vw 2.8vw;
+}
+
+.container-hebergement {
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  margin-top: 2.5vw;
+  width: 67%;
+}
+
+.principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.boxhebergements {
+  width: 16.5vw;
+  height: 13vw;
+  background-color: white;
+  border-radius: 25px;
+  padding: 0.35em;
+  margin: 10px 0 25px 0;
+  box-shadow: 4px 2px 20px rgb(201, 201, 201);
+}
+.boxhebergements:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+.imagehebergements {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 59%;
+  object-fit: cover;
+}
+
+/*ETOILES - Hebergements */
+.etoiles {
+  color: #0065fc;
+  font-size: 0.8vw;
+  margin-left: 10px;
+  margin-top: 0;
+}
+.etoilegrise {
+  color: rgb(201, 201, 201);
+  font-size: 0.8vw;
+}
+
+h4 {
+  font-size: 1.3vw;
+  margin-left: 10px;
+  margin-top: 2px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+p {
+  font-size: 1vw;
+  margin: 2px 0 10px 10px;
+}
+
+
+
+.plusderesultats {
+  font-weight: bold;
+  font-size: 1.2vmax;
+  margin-left: 2.8vw;
+}
+
+/* SECTION POPULAIRES **************** */
+
+/** ASIDE : COLONNES POPULAIRES et HEBERGEMENTS (Container) **/
+
+
+
+.populaires { /* FULL aside "populaires" */
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 31%;
+  margin-top: 2.5vw;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.charticon {
+  position: absolute;
+  top: 3.3vw;
+  right: 3vw;
+  font-size: 1.6vw;
+}
+
+
+/** BOX - BOX POPULAIRES **/
+.boxpopulaires {
+  display: inline-block;
+  padding: 0.35em;
+  width: 23vw;
+  height: 9.5vw;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 4px 2px 20px rgb(201 201 201);
+}
+.boxpopulaires:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+.imagepopulaires {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  float: left;
+  padding-right: 10px;
+  margin-right: 0.8vw;
+}
+
+.asidepopulaires {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.etoilespopulaires {
+  margin-top: 3vw;
+  color: #0065fc;
+  font-size: 0.8vw;
+  margin-left: 10px;
+}
+
+
+
+/** ACTIVITES - SECTION **************** */
+
+/* SECTION ACTIVITES **************** */
+.sectionactivites {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3.3vw 3.5vw;
+  height: 31.5vw;
+}
+
+.boxactivites_1 {
+  display: flex;
+  padding: 0;
+}
+
+.boxactivites_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0;
+}
+
+.boxactivites_a {
+  width: 21vw;
+  padding: 0;
+  margin: 0;
+}
+
+.boxactivites_b {
+  width: 21vw;
+  height: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.boxactivites_c {
+  width: 21vw;
+  height: 41%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.imageactivites_a {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 85%;
+  padding-bottom: 10px;
+  object-fit: cover;
+}
+.imageactivites_b {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 70%;
+  padding-bottom: 10px;
+  object-fit: cover;
+}
+.imageactivites_c {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 63%;
+  padding-bottom: 10px;
+  object-fit: cover;
+}
+
+figure {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px rgb(230, 230, 230);
+}
+figure:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+figcaption {
+  font-weight: bold;
+  font-size: 1.2vmax;
+  margin-left: 1.4em;
+  margin-top: 0.3em;
+}
+
+
+/* ETOILES BLEUES et GRISES BAD ou GOOD */
+
+
+/* FOOTER  **************************************** **/
+
+footer {
+  display: flex;
+  background-color: #f2f2f2;
+  padding-bottom: 30px;
+  padding-top: 40px;
+}
+footer h5 {
+  font-size: 1.2vw;
+  margin-bottom: 1.4em;
+  padding: 0;
+}
+footer ul {
+  padding: 0;
+}
+footer ul li {
+  list-style-type: none;
+  margin-bottom: 1.2em;
+  font-size: 1.1vw;
+}
+.apropos {
+  margin-right: 13vw;
+  margin-left: 3.5vw;
+}
+.noshebergementsfooter {
+  margin-right: 13vw;
+  margin-left: 3.5vw;
+}
+.assistance {
+  margin-right: 13vw;
+  margin-left: 3.5vw;
+}
+
+
+
