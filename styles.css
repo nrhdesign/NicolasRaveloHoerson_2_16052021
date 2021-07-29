@@ -71,7 +71,7 @@ h3 {
 
 
 header {   /* LOGO + Class NAVMAIN */
-  background-color: yellow;
+  background-color: white;
   display:flex;
   flex-direction:row;                 /* ORDRE des items (inversé - en colonne etc..) */
   justify-content: space-between;    /* nav espacée complètement à droite */
@@ -79,7 +79,7 @@ header {   /* LOGO + Class NAVMAIN */
 
 
 #logo{
-background-color:aquamarine;
+background-color:white;
 display:flex;
 justify-self: flex-start;
 width:100px;
@@ -90,7 +90,7 @@ margin:3vw 3vw 1.5vw 2.5vw;                   /* Hauteur marge */
 
 
 nav ul { /* CLASS "nav_bar" */
-  background-color: tomato;
+  background-color: white;
   display: flex;
 }
 
