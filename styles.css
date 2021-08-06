@@ -5,6 +5,9 @@
 
 html {
   width:100%;
+
+  -webkit-overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 
@@ -13,9 +16,9 @@ body{
   margin: 0;
   font-size: 18px;         /* 16px par défaut pour utiliser les em */
   max-width: 100%;
-  display: flex;
-  justify-content:center;
   overflow-x: hidden;
+
+  -webkit-overflow-x: hidden;
 }
 
 a {
@@ -63,15 +66,20 @@ h3 {
 * {    /* <a href "#"= class="sinscrire*>S'inscrire/</a> */
   margin: 0;
   padding: 0;
-
 }
 
 
 header {   /* LOGO + Class NAVMAIN */
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   background-color: white;
   display:flex;
   flex-direction:row;                 /* ORDRE des items (inversé - en colonne etc..) */
   justify-content: space-between;    /* nav espacée complètement à droite */
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
 }
 
 
@@ -92,6 +100,10 @@ nav ul { /* CLASS "nav_bar" */
 
   background-color: white;
   display: flex;
+
+  list-style-type: none;
+  margin-top: 0;
+  margin-right: 2vw;
 }
 
 
@@ -109,12 +121,21 @@ nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
 
   display: flex;
   justify-content:flex-start;
-  align-items: center;
-	padding: 0;
+	padding-right: 0;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  list-style-type: none;
+  margin-top: 0;
+  margin-right: 2vw;
 }
 
 nav ul li { /* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
-  border-top: solid 2.5px ;
+  border-top: solid 2.5px transparent ;
   padding: 10px 15px 0 15px;          /* haut droite bas gauche */
 }
 nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
@@ -127,30 +148,24 @@ nav li, nav a {
 }
 
 /* ************************************************************ */
-
-
 .navmain {
   padding: 50px 25px 50px 30px;        /* haut droite bas gauche */
-	border-top: solid 5.5px transparent;
-  padding-bottom: 50px;
 }
-
 .navmain a:hover {
   color: #0065fc;
 }
 
+
+/* MENU S'INSCRIRE **************/
 .sinscrire {
   font-weight: bolder;
   font-size: 18px;
   color: #0065fc;
-  float: right;
   padding: 0 50px 38px 50px;       /* haut droite bas gauche */
-	border-top: solid 2.5px transparent;
 }
 
 .lightblue-link {       /* S'inscrire */
   padding: 50px 0px 25px 5px;         /* haut droite bas gauche */
-	border-top: solid 5.5px transparent;
 }
 .lightblue-link a:hover{       /* S'inscrire */
        /* haut droite bas gauche */
@@ -167,13 +182,18 @@ nav li, nav a {
   margin-right: 20px;
   clear: left;
 }
-  .recherche p {
-    margin-left:2.3vw;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-.search {
+.recherche p {
   margin-left:2.3vw;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
+  display: flex;
+  height: 50px;
+  margin-bottom: 30px;
 }
 .filter {
   margin-left:2.3vw;
@@ -201,18 +221,7 @@ nav li, nav a {
 	margin: 20px 0 30px 0;
 }
 
-#mapmarker {
- 
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50px;
-	height: 50px;
-	font-size: 20px;
-	border-radius: 15px 0 0 15px;
-	background-color: var(--lightgrey)
-}
 
 #search {
 	height: 50px;
@@ -251,19 +260,19 @@ nav li, nav a {
 
   display: -webkit-box;
   display: -ms-flexbox;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
 
-
-  justify-content: center;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
   font-size: 1.2em;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
 }
 /* 02 BARRE DE Recherche */
 .searchfield {
@@ -292,14 +301,26 @@ nav li, nav a {
   position: relative;
   cursor: pointer;
 }
+#loupe {
+  width: 50px;
+  height: 50px;
+  background-color: #0065fc;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: initial;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  position: absolute;
+  left: 80vw;
+  cursor: pointer;
+}
 
 
 /* SECTION FILTRES *************************************************************** **/
 .filter {
   margin-left: 3.3vw;
  }
-
-
 
  /* 01 H2 TITRE FILTRES **/
 .filterstitle {
@@ -309,24 +330,7 @@ nav li, nav a {
 }
 
 /*  FILTRES ** Tous les BOUTONS ECONOMIQUE FAMILIAL ROMANTIQUE ANIMAUX AUTORISES ************************** **/
-.filter-button {
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 10px;
-  margin-right: 1.5vmax;
-  border-top: solid #e0e0e0 2px;
-  border-right: solid #e0e0e0 2px;
-  border-bottom: solid #e0e0e0 2px;
-  border-left: none;
-  border-radius: 60px;
-  padding: 0.9em;
-  padding-left: 0;
-}
-.filter-button:hover {
-  background-color: #f1f7ff;
-  transform: scale(1.05);
-  transition: 0.4s;
-}
+
 
 /* ICON FILTRES - Eco Fam Romant Animaux autorisés ******* **/
 .filtericon {
@@ -337,16 +341,21 @@ nav li, nav a {
   color: #0065fc;
 }
 
-.infoicon{ /** infoicon*/
-  float: left;
-  margin-right: 12px;
-  font-size: 0.8em;
-  border: solid #f2f2f2 2px;
+
+.filtericonfamilial {
+  background-color: #deebff;
+  padding: 16px 18px 17px 20px;
+  margin-right: 15px;
   border-radius: 50%;
   color: #0065fc;
-  padding: 0.4em 0.85em;
 }
-
+.filtericoneconomique {
+  background-color: #deebff;
+  padding: 17px 15px 17px 16px;
+  margin-right: 15px;
+  border-radius: 50%;
+  color: #0065fc;
+}
 .icontextfilters {
   font-weight: bold;
   display: inline-block;
@@ -374,27 +383,44 @@ nav li, nav a {
 
 /** 500 LOGEMENTS DISPONIBLES **/
 
+.infoicon{ /** infoicon*/
+  margin-right: 12px;
+  font-size: 0.8em;
+  border: solid #f2f2f2 2px;
+  border-radius: 50%;
+  color: #0065fc;
+  padding: 0.4em 0.85em;
+}
 
-/********************************* **/
+.info {
+display:flex;
+align-items: center;
 
-.filter p {
 margin-top: 28px;
 font-size: 1em;
 }
+
+.info p {
+  margin: 0;
+  font-size: 1em;
+}
+/********************************* **/
+
 
 
 
 /* SECTION HEBERGEMENTS **************** */
 
 main {  /* FULL div "Container-hebergement" */
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   justify-content: space-between;
   margin: 0 3.3vw;
 
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-
-
 }
 
 h2 {     /** Hebergement Marseille **/
@@ -410,17 +436,17 @@ h2 {     /** Hebergement Marseille **/
 }
 
 .principal {
-  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+
+  display:flex;  /*** au lieu de  -webkit-box **/
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 20px;
 
-  display: -webkit-box;
-  display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
-
 }
 
 .boxhebergements {
@@ -480,7 +506,10 @@ p {
   margin: 2px 0 10px 10px;
 }
 
-
+a {
+  text-decoration: none;
+  color: black;
+}
 
 .plusderesultats {
   font-weight: bold;
@@ -548,9 +577,18 @@ p {
 }
 
 .asidepopulaires {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
 }
 .etoilespopulaires {
   margin-top: 3vw;
@@ -565,23 +603,42 @@ p {
 
 /* SECTION ACTIVITES **************** */
 .sectionactivites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   justify-content: space-between;
   margin: 0 3.3vw 3.5vw;
   height: 31.5vw;
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
 }
 
 .boxactivites_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   padding: 0;
 }
-
 .boxactivites_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   padding: 0;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
 }
 
 .boxactivites_a {
@@ -589,22 +646,18 @@ p {
   padding: 0;
   margin: 0;
 }
-
 .boxactivites_b {
   width: 21vw;
   height: 50%;
   padding: 0;
   margin: 0;
 }
-
 .boxactivites_c {
   width: 21vw;
   height: 41%;
   padding: 0;
   margin: 0;
 }
-
-
 
 
 .imageactivites_a {
@@ -614,6 +667,8 @@ p {
   height: 85%;
   padding-bottom: 10px;
   object-fit: cover;
+
+  -o-object-fit: cover;
 }
 .imageactivites_b {
   border-top-left-radius: 15px;
@@ -622,6 +677,8 @@ p {
   height: 70%;
   padding-bottom: 10px;
   object-fit: cover;
+  
+  -o-object-fit: cover;
 }
 .imageactivites_c {
   border-top-left-radius: 15px;
@@ -630,16 +687,25 @@ p {
   height: 63%;
   padding-bottom: 10px;
   object-fit: cover;
+
+  -o-object-fit: cover;
 }
 
 figure {
   background-color: white;
   border-radius: 20px;
   box-shadow: 2px 2px 20px rgb(230, 230, 230);
+
+  -webkit-box-shadow: 2px 2px 20px rgb(230, 230, 230);
 }
 figure:hover {
   transform: scale(1.05);
   transition: 0.4s;
+
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
 figcaption {
@@ -650,12 +716,19 @@ figcaption {
 }
 
 
+#Activites h2 {
+  margin: 4vw 2.2vw 2vw 3.5vw;
+}
+
 /* ETOILES BLEUES et GRISES BAD ou GOOD */
 
 
 /* FOOTER  **************************************** **/
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   background-color: #f2f2f2;
   padding-bottom: 30px;
@@ -687,46 +760,22 @@ footer ul li {
   margin-left: 3.5vw;
 }
 
+.apropos ul li:hover,
+.hebergementsfooter ul li:hover,
+.assistance ul li:hover {
+  -webkit-text-stroke: 1px black;
+}
 /**********************************************************************************************************/
 /***************************************Media Queries MOBILES ********************************/
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-  h1 {
-    margin: 20px 15px 0px 6px;
-    padding-top: 25px;
-  }
-  .recherche p {
-    margin: 10px 6px 35px 6px;
-  }
-  .search {
-    width: 90%;
-    margin: 20px 6px 10px 6px;
-  }
-  .searchfield {
-    width: 80%;
-  }
-  .searchbutton {
-    display: none;
-  }
-  #searchbutton {
-    color: white;
-    background-color: #0065fc;
-  }
-  .filterstitle {
-    width: 100%;
-    margin: 10px 0px 10px 6px;
-  }
-  main {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    width: 100%;
-    margin: 0;
-  }
+
+/** IPHONE 8 (375x667) **/
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  
+
   .container h2,
   .populaires h2 {
     margin: 35px 10px 10px 25px;
-    font-size: 4.5vmax;
+    font-size: 3vmax;
   }
   .populaires p {
     font-size: 3vw;
@@ -735,58 +784,125 @@ footer ul li {
   .principal p {
     font-size: 3vw;
   }
-  .charticon {
-    font-size: 4.5vmax;
-    margin: 22px 10px 0px 0px;
+
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-left: 0;
   }
-  .principal h4,
-  .populaires h4 {
-    font-size: 3.7vw;
+  
+  
+  h1 {
+    margin: 20px 15px 0px 6px;
+    padding-top: 25px;
   }
-  figcaption {
-    font-size: 3vmax;
-    margin-top: 2.5vmax;
+
+  h2 {
+    font-size: 1.8vw;
+  }
+
+  
+  .container {
+    width: 100%;
+  }
+  .boxhebergements {
+    width: 25vw;
+    height: 20vw;
+  }
+  h4 {
+    font-size: 1.7vw;
+  }
+  .boxhebergements p,
+  .boxpopulaires p {
+    font-size: 1.5vw;
   }
   .etoiles,
-  .etoilegrise,
-  .etoilespopulaires {
-    font-size: 3vw;
+  .etoilegrise {
+    font-size: 1.4vw;
   }
   .etoilespopulaires {
-    font-size: 3vw;
-    margin-top: 15vw;
+    font-size: 1.4vw;
   }
-  .populaires .etoilegrise {
-    font-size: 3vw;
+  .imageactivites_a,
+  .imageactivites_b,
+  .imageactivites_c {
+    padding-bottom: 0.2vw;
   }
-  .boxpopulaires:nth-child(2) .etoilespopulaires {
-    margin-top: 11vw;
+  figcaption {
+    font-size: 1.2vw;
+    margin-top: 5px;
   }
-  .populaires {
-    border-radius: 0;
-    margin-top: 30px;
+
+  #body {
+    width: 100%;
   }
-  .boxpopulaires p {
-    margin-bottom: 8vw;
+  #logo,
+  #h1,
+  form,
+  #filter,
+  .recherche {
+    padding-left: 3vw;
   }
-  .asidepopulaires {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+
+  nav {
+    width: 100%;
+    margin: 0;
   }
-  .boxpopulaires {
-    width: 85%;
-    height: 142px;
-    margin-bottom: 5px;
+
+  nav ul {
+    width: 100%;
+    padding: 0;
   }
-  .imagepopulaires {
-    margin-right: 2.5vw;
+
+  .sinscrire {
+    position: absolute;
+    top: 2.2vh;
+    right: 5vw;
   }
+
+  nav a:hover {
+    border-top: none;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #f2f2f2;
+    padding-bottom: 2vh;
+  }
+  nav li:hover {
+    border-bottom: 2px solid #0065fc;
+  }
+
+  .recherche {
+    padding: 2vw 3vw 2vw 3vw;
+  }
+  .searchbutton {
+    display: none;
+  }
+
+ 
+
+  .filtericon {  /** ensemble icons **/
+    margin-left: 0px;
+    margin-right: 5vw;
+  }
+
+
+  /***************** Hébergements ************************/
+  .container-hebergement {
+    background: none;
+    padding: 4vw;
+  }
+
   .principal {
+    width: 100%;
     margin-bottom: 10px;
   }
-  .container {
+  .container-nav {
     background-color: white;
     margin-top: 10px;
   }
@@ -798,9 +914,78 @@ footer ul li {
     font-size: 18px;
     margin-left: 20px;
   }
+  
+
+ /***************** populaire ************************/
+ .charticon {
+  font-size: 4.5vmax;
+  margin: 22px 10px 0px 0px;
+}
+
+.principal h4,
+.populaires h4 {
+  font-size: 3.7vw;
+}
+ 
+ .populaires {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 30px;
+  }
+  .charticon {
+    font-size: 1.8vw;
+  }
+
+  h2 {
+    font-size: 1.8vw;
+  }
+  .boxpopulaires p {
+    margin-bottom: 8vw;
+  }
+  .asidepopulaires {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+
+    flex-direction: column;
+
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+  .boxpopulaires {
+    width: 85%;
+    height: 142px;
+    margin-bottom: 5px;
+  }
+  .imagepopulaires {
+    margin-right: 2.5vw;
+  }
+
+  .etoiles,
+  .etoilegrise,
+  .etoilespopulaires {
+    font-size: 3vw;
+  }
+  .etoilespopulaires {
+    font-size: 3vw;
+    margin-top: 15vw;
+  }
+  
+  /****************** activite ************************/
+  
+  #garde {
+    margin: 0;
+  }
+  #Activites figcaption {
+    margin-top: 1vh;
+    margin-left: 4vw;
+  }
+
   #Activites {
     width: 100vw;
     margin: 0;
+    padding: 0;
   }
   #Activites h2 {
     font-size: 5vmax;
@@ -848,12 +1033,22 @@ footer ul li {
   .imageactivites_c {
     height: 135px;
   }
+
+  figcaption {
+    font-size: 3vmax;
+    margin-top: 2.5vmax;
+  }
+  
+
+
+  /************************* footer ************************/
   footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     padding-bottom: 10px;
+    padding-left: 2vh;
   }
   footer h5 {
     font-size: 18px;
@@ -870,38 +1065,32 @@ footer ul li {
     margin-left: 30px;
     margin-bottom: 10px;
   }
+  
+
+
+
+
+
+/************************* **/
+@media screen and (min-width: 500px) and (max-width: 5000px) {
+  #loupe {
+    color: transparent;
+    background-color: transparent;
   }
-
-
-/***********************************************************************************************************/
-/***************************************Media Quesries For mobile (landscape) ************************/
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-
 }
 
+/************************* **/
+@media screen and (max-width: 500px) {
+  #loupe {
+    color: white;
+    background-color: #0065fc;
+  }
+}
 
 /***********************************************************************************************************/
-/***************************************Media Queries TABLETS ************************/
+/***************************************Media Queries TABLETS ************************
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-  .container {
-    padding-bottom: 25px;
-  }
-  .principal {
-    margin-bottom: 1vw;
-  }
-  .boxhebergements {
-    width: 22vw;
-    height: 17vw;
-  }
-  .imagepopulaires {
-    padding-right: 0.6vw;
-  }
-  .plusderesultats {
-    font-size: 1.6vw;
-  }
-}
-  }
+  
 
 
 /***********************************************************************************************************/
@@ -917,3 +1106,11 @@ footer ul li {
 @media only screen and (min-width: 1024px) and (max-width: 1199px) {
 
 }
+
+
+
+
+
+
+/* ********************************************************* */
+} 
