@@ -1,7 +1,18 @@
 
 /* CONFIGURATION PRINCIPALE */
 
+:root {
+  --lightgrey: #f2f2f2;
+  --blue: #0065fc;
+	--lightblue: #DEEBFF;
+	--grey:#D9D9D9;
+	--radius: 20px;
+}
 
+* {    /* <a href "#"= etc...*/
+  margin: 0;
+  padding: 0;
+}
 
 html {
   width:100%;
@@ -13,12 +24,33 @@ html {
 
 body{
   font-family: "Raleway", sans-serif;
+  display: flex;
+	justify-content: center;
   margin: 0;
-  font-size: 18px;         /* 16px par défaut pour utiliser les em */
+  font-size: 16px;         /* 16px par défaut pour utiliser les em */
   max-width: 100%;
   overflow-x: hidden;
 
   -webkit-overflow-x: hidden;
+}
+
+
+/* IMG (LOGO) + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
+#container-nav {
+  width: 100%;   /* Permettre une marge à toute la page du HEADER jusqu'au FOOTER */
+}
+.container-nav a:hover {
+  color: var(--blue);
+}
+
+
+/* LIEN après une visite */
+.navmain a:visited, .apropos a:visited, .principal a:visited, .populaires a:visited, .Activites a:visited .plusderesultats a:visited {
+	color: black;
+}
+
+.sinscrire a:visited {
+	color: var(--blue);
 }
 
 a {
@@ -27,7 +59,7 @@ a {
 }
 
 a:hover {
-  color: #0065fc;
+  color: var(--blue);
 }
 
 
@@ -45,29 +77,22 @@ h3 {
   font-weight: bold;
 }
 
+p, li {
+	font-size: 16px;
+}
 
+.img {
+	background-size: cover;
+	background-position: center;
+}
+
+
+.boxhebergements em, .boxpopulaires em {
+  font-weight: bolder;
+	font-style: initial;
+}
 
 /* HEADER NAVIGATION ******************************************************************** */
-
-
-#container-nav {
-  width: 100%;   /* Permettre une marge à toute la page du HEADER jusqu'au FOOTER */
-}
-
-
-/* IMG (LOGO) + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
-.container-nav a:hover {
-  color: #0065fc;
-}
-
-
-
-
-* {    /* <a href "#"= class="sinscrire*>S'inscrire/</a> */
-  margin: 0;
-  padding: 0;
-}
-
 
 header {   /* LOGO + Class NAVMAIN */
   display: -webkit-box;
@@ -76,7 +101,8 @@ header {   /* LOGO + Class NAVMAIN */
   background-color: white;
   display:flex;
   flex-direction:row;                 /* ORDRE des items (inversé - en colonne etc..) */
-  justify-content: space-between;    /* nav espacée complètement à droite */
+  justify-content: space-between;
+  position:relative;    
 
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -93,7 +119,14 @@ margin:3vw 3vw 1.5vw 2.5vw;                   /* Hauteur marge */
 }
 
 
+nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
+  display: -webkit-box;
+  display: -ms-flexbox;
 
+  display: flex;
+  justify-content:flex-start;
+	padding-right: 0;
+}
 nav ul { /* CLASS "nav_bar" */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,15 +148,6 @@ nav ul { /* CLASS "nav_bar" */
 }
 
 
-nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
-  display: -webkit-box;
-  display: -ms-flexbox;
-
-  display: flex;
-  justify-content:flex-start;
-	padding-right: 0;
-}
-
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,7 +163,7 @@ nav ul li { /* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
   padding: 10px 15px 0 15px;          /* haut droite bas gauche */
 }
 nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
-  border-top: solid 2.5px #0065fc;
+  border-top: solid 2.5px var(--blue);
 }
 
 nav li, nav a {
@@ -147,20 +171,25 @@ nav li, nav a {
 	color: black;
 }
 
-/* ************************************************************ */
-.navmain {
-  padding: 50px 25px 50px 30px;        /* haut droite bas gauche */
+/* ******   MENU  ******************************** */
+
+.navmain {  /* Ecart */
+  padding: 50px 0px 25px 5px;   
+} 
+.navmain a { /*contenant Hébergements et Activités */
+  padding: 50px 34px 0 34px;        /* haut droite bas gauche */
+  border-top: solid 2.5px transparent;
 }
 .navmain a:hover {
-  color: #0065fc;
+  color: var(--blue);
 }
 
 
 /* MENU S'INSCRIRE **************/
 .sinscrire {
   font-weight: bolder;
-  font-size: 18px;
-  color: #0065fc;
+  font-size: 16px;
+  color: var(--blue);
   padding: 0 50px 38px 50px;       /* haut droite bas gauche */
 }
 
@@ -229,7 +258,7 @@ nav li, nav a {
 	font-family: 'Raleway', sans-serif;
 	font-weight: bolder;
 	font-size: 15px;
-	border: solid 1px var(--lightgrey);
+	border: solid 1px var(--blue);
 	padding: 15px;
 }
 
@@ -264,7 +293,7 @@ nav li, nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: var(--lightgrey);
   font-size: 1.2em;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -277,8 +306,8 @@ nav li, nav a {
 /* 02 BARRE DE Recherche */
 .searchfield {
   width: 12rem;
-  border-top: solid #f2f2f2 1px;
-  border-bottom: solid #f2f2f2 1px;
+  border-top: solid var(--lightgrey) 1px;
+  border-bottom: solid var(--lightgrey) 1px;
   border-left: none;
   border-right: none;
   font-family: "Raleway", sans-serif;
@@ -290,7 +319,7 @@ nav li, nav a {
 /* 03 BOUTON Recherche BUTTON */
 .searchbutton {
   width: 132px;
-  background-color: #0065fc;
+  background-color: var(--blue);
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   font-size: initial;
@@ -304,7 +333,7 @@ nav li, nav a {
 #loupe {
   width: 50px;
   height: 50px;
-  background-color: #0065fc;
+  background-color: var(--blue);
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   font-size: initial;
@@ -334,27 +363,27 @@ nav li, nav a {
 
 /* ICON FILTRES - Eco Fam Romant Animaux autorisés ******* **/
 .filtericon {
-  background-color: #deebff;
+  background-color: var(--lightblue);
   padding: 17px 16px 17px 18px;
   margin-right: 15px;
   border-radius: 50%;
-  color: #0065fc;
+  color: var(--blue);
 }
 
 
 .filtericonfamilial {
-  background-color: #deebff;
+  background-color: var(--lightblue);
   padding: 16px 18px 17px 20px;
   margin-right: 15px;
   border-radius: 50%;
-  color: #0065fc;
+  color: var(--blue);
 }
 .filtericoneconomique {
-  background-color: #deebff;
+  background-color: var(--lightblue);
   padding: 17px 15px 17px 16px;
   margin-right: 15px;
   border-radius: 50%;
-  color: #0065fc;
+  color: var(--blue);
 }
 .icontextfilters {
   font-weight: bold;
@@ -386,9 +415,9 @@ nav li, nav a {
 .infoicon{ /** infoicon*/
   margin-right: 12px;
   font-size: 0.8em;
-  border: solid #f2f2f2 2px;
+  border: solid var(--lightgrey) 2px;
   border-radius: 50%;
-  color: #0065fc;
+  color: var(--blue);
   padding: 0.4em 0.85em;
 }
 
@@ -429,10 +458,10 @@ h2 {     /** Hebergement Marseille **/
 }
 
 .container-hebergement {
-  background-color: #f2f2f2;
+  background-color: var(--lightgrey);
   border-radius: 25px;
-  margin-top: 2.5vw;
-  width: 67%;
+  margin: auto;
+  width: 95%;
 }
 
 .principal {
@@ -484,7 +513,7 @@ h2 {     /** Hebergement Marseille **/
 
 /*ETOILES - Hebergements */
 .etoiles {
-  color: #0065fc;
+  color: var(--blue);
   font-size: 0.8vw;
   margin-left: 10px;
   margin-top: 0;
@@ -524,7 +553,7 @@ a {
 
 
 .populaires { /* FULL aside "populaires" */
-  background-color: #f2f2f2;
+  background-color: var(--lightgrey);
   border-radius: 25px;
   width: 31%;
   margin-top: 2.5vw;
@@ -592,7 +621,7 @@ a {
 }
 .etoilespopulaires {
   margin-top: 3vw;
-  color: #0065fc;
+  color: var(--blue);
   font-size: 0.8vw;
   margin-left: 10px;
 }
@@ -730,7 +759,7 @@ footer {
   display: -ms-flexbox;
 
   display: flex;
-  background-color: #f2f2f2;
+  background-color: var(--lightgrey);
   padding-bottom: 30px;
   padding-top: 40px;
 }
@@ -769,21 +798,7 @@ footer ul li {
 /***************************************Media Queries MOBILES ********************************/
 
 /** IPHONE 8 (375x667) **/
-@media screen and (min-width: 320px) and (max-width: 800px) {
-  
-
-  .container h2,
-  .populaires h2 {
-    margin: 35px 10px 10px 25px;
-    font-size: 3vmax;
-  }
-  .populaires p {
-    font-size: 3vw;
-    margin-bottom: 0;
-  }
-  .principal p {
-    font-size: 3vw;
-  }
+@media  screen and (min-width: 320px) and (max-width: 800px) {
 
   main {
     -webkit-box-orient: vertical;
@@ -804,20 +819,142 @@ footer ul li {
     font-size: 1.8vw;
   }
 
+  h4 {
+    font-size: 3vw;
+  }
+
+
+  header {
+    flex-direction:column;
+  }
+  
+  nav {
+    width: 100%;
+    margin: 0;
+  }
+  nav a:hover {
+    border-top: none;
+  
+  }
+
+  nav ul {
+    width: 100%;
+    padding: 0;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid var(--lightgrey);
+    padding-bottom: 2vh;
+  }
+  nav li:hover {
+    border-top: none;
+    border-bottom:  3px solid var(--blue);
+   
+  }
+  
+
+  .navmain {
+    padding: 20px 25px 20px 30px;
+            /* haut droite bas gauche */
+  }
+  .navmain a {
+    padding: 0;
+  }
+  .navmain a:hover {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+
+
+  .lightblue-link {       /* S'inscrire */
+    position:absolute;
+    left: 5px;
+    top: 30px;
+    padding: 0;
+    border-style:hidden;
+  }
+  .lightblue-link:hover {       /* S'inscrire */
+    border-bottom:none;
+    border-top: none;
+  }
+
+  
+
+  .sinscrire {
+    top: 2.2vw;
+    right: 5vw;
+    margin: 0;
+    float: right;
+    padding: 0px 30px 0px 38px;
+  }
+  .sinscrire:hover {
+    border-top:transparent;
+    border-bottom:none;
+  }
+
+
+
+
+
+
+  .recherche {
+    padding: 2vw 3vw 2vw 3vw;
+  }
+  .searchbutton {
+    display: none;
+  }
+
+
+  .filtericon {  /** ensemble icons **/
+    margin-left: 0px;
+    margin-right: 5vw;
+  }
+
+  nav ul li:hover { /* <NAV> */
+    border-top: none;
+    border-bottom: solid 3px var(--blue);
+  }
+
+
+
+
+  
+
+  
   
   .container {
     width: 100%;
   }
+
+  .container h2,
+  .populaires h2 {
+    margin: 35px 10px 10px 25px;
+    font-size: 3vmax;
+  }
+  .populaires p {
+    font-size: 3vw;
+    margin-bottom: 0;
+  }
+  .principal p {
+    font-size: 3vw;
+  }
+
+
+    
+    
   .boxhebergements {
     width: 25vw;
     height: 20vw;
   }
   h4 {
-    font-size: 1.7vw;
+    font-size: 14px;
   }
   .boxhebergements p,
   .boxpopulaires p {
-    font-size: 1.5vw;
+    font-size: 16px;
   }
   .etoiles,
   .etoilegrise {
@@ -847,56 +984,22 @@ footer ul li {
     padding-left: 3vw;
   }
 
-  nav {
-    width: 100%;
-    margin: 0;
-  }
-
-  nav ul {
-    width: 100%;
-    padding: 0;
-  }
-
-  .sinscrire {
-    position: absolute;
-    top: 2.2vh;
-    right: 5vw;
-  }
-
-  nav a:hover {
-    border-top: none;
-  }
-
-  nav li {
-    width: 100%;
-    text-align: center;
-    border-bottom: 3px solid #f2f2f2;
-    padding-bottom: 2vh;
-  }
-  nav li:hover {
-    border-bottom: 2px solid #0065fc;
-  }
-
-  .recherche {
-    padding: 2vw 3vw 2vw 3vw;
-  }
-  .searchbutton {
-    display: none;
-  }
-
- 
-
-  .filtericon {  /** ensemble icons **/
-    margin-left: 0px;
-    margin-right: 5vw;
-  }
-
+  
+  
 
   /***************** Hébergements ************************/
   .container-hebergement {
     background: none;
     padding: 4vw;
+    }
+    
   }
+  .Hebergements h2, .activites h2 {
+  margin: 40px 7% 30px 7%;
+  }
+
+
+
 
   .principal {
     width: 100%;
@@ -916,32 +1019,31 @@ footer ul li {
   }
   
 
+
  /***************** populaire ************************/
- .charticon {
-  font-size: 4.5vmax;
-  margin: 22px 10px 0px 0px;
-}
-
-.principal h4,
-.populaires h4 {
-  font-size: 3.7vw;
-}
+  
  
- .populaires {
-    width: 100%;
-    border-radius: 0;
-    margin-top: 30px;
-  }
-  .charticon {
-    font-size: 1.8vw;
-  }
 
-  h2 {
-    font-size: 1.8vw;
-  }
-  .boxpopulaires p {
-    margin-bottom: 8vw;
-  }
+  .populaires {
+      width: 100%;
+      border-radius: 25px;
+      margin-top: 30px;
+    }
+    .charticon {
+      font-size: 1.8vw;
+    }
+
+    
+    .boxpopulaires p {
+      margin-bottom: 8vw;
+    }
+  .boxpopulaires {
+      width: 85%;
+      height: 142px;
+      margin-bottom: 5px;
+    }
+
+
   .asidepopulaires {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -953,11 +1055,7 @@ footer ul li {
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
   }
-  .boxpopulaires {
-    width: 85%;
-    height: 142px;
-    margin-bottom: 5px;
-  }
+ 
   .imagepopulaires {
     margin-right: 2.5vw;
   }
@@ -988,7 +1086,8 @@ footer ul li {
     padding: 0;
   }
   #Activites h2 {
-    font-size: 5vmax;
+    font-size: 22px;
+    margin-top:30px;
     margin-left: 20px;
     margin-bottom: 30px;
   }
@@ -1035,10 +1134,11 @@ footer ul li {
   }
 
   figcaption {
-    font-size: 3vmax;
+    font-size: 16px;
     margin-top: 2.5vmax;
   }
   
+
 
 
   /************************* footer ************************/
@@ -1062,7 +1162,7 @@ footer ul li {
   .apropos,
   .hebergementsfooter,
   .assistance {
-    margin-left: 30px;
+    margin-left: 10px;
     margin-bottom: 10px;
   }
   
@@ -1083,9 +1183,83 @@ footer ul li {
 @media screen and (max-width: 500px) {
   #loupe {
     color: white;
-    background-color: #0065fc;
+    background-color: var(--blue);
   }
+  .filterstitle {
+    width: 100%;
+    margin: 10px 0px 10px 6px;
+  }
+
 }
+
+
+
+/*    v2 ****** */
+@media screen and (min-width: 2100px) {
+
+}
+
+@media screen and (max-width: 1400px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 640px) {
+  /**************************** marseille ********************************/
+  #photosMarseille {
+    flex-direction: column;
+  }
+  .encartMarseille {
+    margin-right: 0;
+  }
+  /***************************** activite *******************************/
+  #photoActivite {
+    flex-direction: column;
+    height: auto;
+  }
+  .petiteImg {
+    flex-direction: column;
+  }
+  .petiteImg,
+  .grandeImg,
+  #garde,
+  #Pomegues {
+    margin: 0;
+  }
+  .block1 {
+    display: flex;
+    flex-direction: column;
+  }
+  #article1 {
+    flex-direction: column;
+  }
+  #article2 {
+    flex-direction: column;
+    margin: 0;
+  }
+  #activite img {
+    height: 140px;
+  }
+  #activite a {
+    width: 100%;
+    margin-bottom: 2.4vh;
+  }
+  #activite figure {
+    height: 180px;
+  }
+
+
+
+
+
+
+
 
 /***********************************************************************************************************/
 /***************************************Media Queries TABLETS ************************
