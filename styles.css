@@ -14,10 +14,6 @@
   padding: 0;
 }
 
-
-
-
-
 html {
   width:100%;
 
@@ -25,23 +21,22 @@ html {
   overflow-x: hidden;
 }
 
-
 body{
   font-family: "Raleway", sans-serif;
   display: flex;
 	justify-content: center;
   margin: 0;
-  font-size: 16px;         /* 16px par défaut pour utiliser les em */
+  font-size: 16px;   /* 16px par défaut pour utiliser les em */
   max-width: 100%;
   overflow-x: hidden;
 
   -webkit-overflow-x: hidden;
 }
 
+/* LOGO + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
 
-/* IMG (LOGO) + <NAV> + SINSCRIRE (SURVOL des 3 ONGLETS)*/
 #container-nav {
-  width: 100%;   /* Permettre une marge à toute la page du HEADER jusqu'au FOOTER */
+  width: 100%;  /* Permettre marge à toute la page du HEADER jusqu'au FOOTER */
 }
 .container-nav a:hover {
   color: var(--blue);
@@ -49,6 +44,7 @@ body{
 
 
 /* LIEN après une visite */
+
 .navmain a:visited, .apropos a:visited, .principal a:visited, .populaires a:visited, .Activites a:visited .plusderesultats a:visited {
 	color: black;
 }
@@ -59,14 +55,12 @@ body{
 
 a {
   text-decoration: none;
-
   color: rgb(0, 0, 0);
 }
 
 a:hover {
   color: var(--blue);
 }
-
 
 ul {
   list-style-type: none;
@@ -95,7 +89,7 @@ p, li {
 	background-position: center;
 }
 
-span {   /* Bold pour les prix */
+span {  /* Bold pour les prix */
   font-weight: bold;
 }
 
@@ -106,13 +100,13 @@ span {   /* Bold pour les prix */
 
 /* HEADER NAVIGATION ******************************************************************** */
 
-header {   /* LOGO + Class NAVMAIN */
+header {  /* LOGO + Class NAVMAIN */
   display: -webkit-box;
   display: -ms-flexbox;
 
   background-color: white;
   display:flex;
-  flex-direction:row;                 /* ORDRE des items (inversé - en colonne etc..) */
+  flex-direction:row;  /* ORDRE items (inversé - en colonne etc..) */
   justify-content: space-between;
   position:relative;    
 
@@ -120,16 +114,20 @@ header {   /* LOGO + Class NAVMAIN */
   -ms-flex-pack: justify;
 }
 
-
 #logo{
 background-color:white;
 display:flex;
 justify-self: flex-start;
 width:100px;
 height: auto;
-margin:3vw 3vw 1.5vw 2.5vw;                   /* Hauteur marge */
+margin:3vw 3vw 1.5vw 2.5vw;   /* Hauteur marge */
+}
+#logo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
+/** Réglages liste de navigation */
 
 nav {  /* <NAV (GLOBAL)> 01 Hébergement + Activités */
   display: -webkit-box;
@@ -151,15 +149,6 @@ nav ul { /* CLASS "nav_bar" */
   margin-right: 2vw;
 }
 
-
-/* NAV MOBILE */
-.navigationmobile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -172,7 +161,7 @@ nav ul {
 
 nav ul li { /* <NAV> 03 Hébergement + Activités (CENTRE MENU)*/
   border-top: solid 2.5px transparent ;
-  padding: 10px 15px 0 15px;          /* haut droite bas gauche */
+  padding: 10px 15px 0 15px; /* haut droite bas gauche */
 }
 nav ul li:hover { /* <NAV> 04.A Hébergement + Activités (TRAIT AU-DESSUS)*/
   border-top: solid 2.5px var(--blue);
@@ -183,7 +172,7 @@ nav li, nav a {
 	color: black;
 }
 
-/* ******   MENU  ******************************** */
+/* ****************************  MENU  ********************************** */
 
 .navmain {  /* Ecart */
   padding: 50px 0px 25px 5px;   
@@ -196,26 +185,26 @@ nav li, nav a {
   color: var(--blue);
 }
 
+/* Onglet "S'INSCRIRE" **************/
 
-/* MENU S'INSCRIRE **************/
 .sinscrire {
   font-weight: 800;
   font-size: 16px;
   color: var(--blue);
-  padding: 0 50px 38px 50px;       /* haut droite bas gauche */
+  padding: 0 50px 38px 50px;  /* haut droite bas gauche */
 }
 
-.lightblue-link {       /* S'inscrire */
-  padding: 50px 0px 25px 5px;         /* haut droite bas gauche */
+.lightblue-link {  /* S'inscrire */
+  padding: 50px 0px 25px 5px;  /* haut droite bas gauche */
 }
-.lightblue-link a:hover{       /* S'inscrire */
-       /* haut droite bas gauche */
+.lightblue-link a:hover{ 
 	border-top: solid 5.5px transparent;
 }
 
 /* MAIN SECTION - RECHERCHE ***************************************************************************  */
 
-/* MAIN Recherche CONTAINER  */
+/* MAIN - Zone de Recherche CONTAINER  */
+
 .recherche h1 {
   margin-left: 2.3vw;
   font-size: 22px;
@@ -241,10 +230,6 @@ nav li, nav a {
   margin-left:2.3vw;
 }
 
-
-
-
-
 #recherche {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -262,8 +247,6 @@ nav li, nav a {
 	flex-direction: row;
 	margin: 20px 0 30px 0;
 }
-
-
 
 #search {
 	height: 50px;
@@ -287,13 +270,15 @@ nav li, nav a {
 
 
 
-/* SEARCH - LIGNE RECHERCHE ************************************************************************ */
+/* SEARCH - LIGNE RECHERCHE ************************************************************* */
+
 /* RECHERCHE */
+
 .search {
   display: flex;
   margin-left: 3.3vw;
   height: 50px;
-  margin-bottom: 30px;                 /* */
+  margin-bottom: 30px;
 }
 
 /* 01 icon MAPMAKER */
@@ -316,7 +301,9 @@ nav li, nav a {
   -webkit-box-align: center;
   -ms-flex-align: center;
 }
-/* 02 BARRE DE Recherche */
+
+/* 02 ZONE de Recherche */
+
 .searchfield {
   width: 12rem;
   border-top: solid var(--lightgrey) 1px;
@@ -330,6 +317,7 @@ nav li, nav a {
 }
 
 /* 03 BOUTON Recherche BUTTON */
+
 .searchbutton {
   width: 132px;
   background-color: var(--blue);
@@ -345,12 +333,11 @@ nav li, nav a {
 }
 #loupe {
   display:none;
-  
-  
 }
 
 
 /* SECTION FILTRES *************************************************************** **/
+
 .filter {
   margin-left: 3.3vw;
  }
@@ -364,8 +351,8 @@ nav li, nav a {
 
 /*  FILTRES ** Tous les BOUTONS ECONOMIQUE FAMILIAL ROMANTIQUE ANIMAUX AUTORISES ************************** **/
 
-
 /* ICON FILTRES - Eco Fam Romant Animaux autorisés ******* **/
+
 .filtericon {
   background-color: var(--lightblue);
   padding: 17px 16px 17px 18px;
@@ -374,21 +361,22 @@ nav li, nav a {
   color: var(--blue);
 }
 
-
-.filtericonfamilial {
+.filtericonfamilial /* pour le responsive */
   background-color: var(--lightblue);
   padding: 16px 18px 17px 20px;
   margin-right: 15px;
   border-radius: 50%;
   color: var(--blue);
 }
-.filtericoneconomique {
+
+.filtericoneconomique { /* pour le responsive */
   background-color: var(--lightblue);
   padding: 17px 15px 17px 16px;
   margin-right: 15px;
   border-radius: 50%;
   color: var(--blue);
 }
+
 .icontextfilters {
   font-weight: bold;
   display: inline-block;
@@ -439,9 +427,6 @@ font-size: 1em;
 }
 /********************************* **/
 
-
-
-
 /* SECTION HEBERGEMENTS **************** */
 
 main {  /* FULL div "Container-hebergement" */
@@ -456,7 +441,7 @@ main {  /* FULL div "Container-hebergement" */
   -ms-flex-pack: justify;
 }
 
-h2 {     /** title - Hebergement Marseille **/
+h2 {  /** title - Hebergement Marseille **/
   font-size: 1.7vmax;
   margin: 03.3vw 0 1.2vw 2.8vw;
 }
@@ -494,7 +479,6 @@ h2 {     /** title - Hebergement Marseille **/
   -webkit-box-shadow: 4px 2px 20px rgb(201, 201, 201);
 }
 
-
 .boxhebergements:hover {
   transform: scale(1.05);
   transition: 0.4s;
@@ -516,6 +500,7 @@ h2 {     /** title - Hebergement Marseille **/
 }
 
 /*ETOILES - Hebergements */
+
 .etoiles {
   color: var(--blue);
   font-size: 0.8vw;
@@ -534,6 +519,7 @@ h4 {
   padding-bottom: 0;
   margin-bottom: 0;
 }
+
 p {
   font-size: 1vw;
   margin: 2px 0 10px 10px;
@@ -556,8 +542,6 @@ a {
 /* SECTION POPULAIRES **************** */
 
 /** ASIDE : COLONNES POPULAIRES et HEBERGEMENTS (Container) **/
-
-
 
 .populaires { /* FULL aside "populaires" */
   background-color: var(--lightgrey);
@@ -593,8 +577,8 @@ a {
   font-size: 1.6vw;
 }
 
-
 /** BOX - BOX POPULAIRES **/
+
 .boxpopulaires {
   display: inline-block;
   padding: 0.35em;
@@ -644,6 +628,7 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
 }
+
 .etoilespopulaires {
   margin-top: 3vw;
   color: var(--blue);
@@ -651,11 +636,10 @@ a {
   margin-left: 10px;
 }
 
-
-
 /** ACTIVITES - SECTION **************** */
 
 /* SECTION ACTIVITES **************** */
+
 .sectionactivites {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -713,7 +697,6 @@ a {
   margin: 0;
 }
 
-
 .imageactivites_a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -769,13 +752,11 @@ figcaption {
   margin-top: 0.3em;
 }
 
-
 #Activites h2 {
   margin: 4vw 2.2vw 2vw 3.5vw;
 }
 
 /* ETOILES BLEUES et GRISES BAD ou GOOD */
-
 
 /* FOOTER  **************************************** **/
 
@@ -788,6 +769,7 @@ footer {
   padding-bottom: 30px;
   padding-top: 40px;
 }
+
 footer h5 {
   font-size: 1.2vw;
   margin-bottom: 1.4em;
@@ -801,14 +783,17 @@ footer ul li {
   margin-bottom: 1.2em;
   font-size: 1.1vw;
 }
+
 .apropos {
   margin-right: 13vw;
   margin-left: 3.5vw;
 }
+
 .noshebergementsfooter {
   margin-right: 13vw;
   margin-left: 3.5vw;
 }
+
 .assistance {
   margin-right: 13vw;
   margin-left: 3.5vw;
@@ -822,7 +807,7 @@ footer ul li {
 /**********************************************************************************************************/
 /***************************************Media Queries MOBILES ********************************/
 
-/** IPHONE 8 (375x667) **/
+/** IPHONE 8 **/
 @media  screen and (min-width: 320px) and (max-width: 767px) {
 
   main {
@@ -876,7 +861,6 @@ footer ul li {
     border-bottom:  3px solid var(--blue);
   }
   
-
   .navmain {
     padding: 20px 25px 20px 30px;
             /* haut droite bas gauche */
@@ -888,8 +872,6 @@ footer ul li {
     color: var(--blue);
     font-weight: 600;
   }
-
-
 
   .lightblue-link {       /* S'inscrire */
     position:absolute;
@@ -915,9 +897,8 @@ footer ul li {
     border-bottom:none;
   }
 
-
-
     /***************** Recherche ************************/
+
   .recherche {
     padding: 2vw 3vw 2vw 3vw;
   }
@@ -941,7 +922,6 @@ footer ul li {
     border-bottom: solid 3px var(--blue);
   }
 
-
   #loupe {
     display:inline-block;  /* CENTRER ICON */
     color: white;
@@ -964,6 +944,7 @@ footer ul li {
     }
   
   /***************** Hébergements ************************/
+
   #body {
     width: 100%;
   }
@@ -974,6 +955,7 @@ footer ul li {
   .recherche {
     padding-left: 3vw;
   }
+
   h2 { /* Hebergements à Marseille */
     font-size: 5.5vw;
     margin: 43px 0 28px 21px;
@@ -982,10 +964,12 @@ footer ul li {
   .container {
     width: 100%;
   }
+
   .principal {
     width: 100%;
     margin-bottom: 10px;
   }
+
   .container h2,
   .populaires h2 {
     margin: 35px 10px 10px 25px;
@@ -995,12 +979,14 @@ footer ul li {
   .principal p {
     font-size: 3vw;
   }
+
   .container-hebergement {
     width: 100%;
     margin: 10px 0 10px 0px;
     background: none;
     padding: 0;
   }
+
   .Hebergements h2, .activites h2 {
     margin: 40px 7% 30px 7%;
     }
@@ -1016,10 +1002,12 @@ footer ul li {
     width: 85%;
     height: 190px;
   }
+
   h4 {  /* infos TITRE box */
     font-size: 16px;
     padding: 0;
   }
+
   .boxhebergements p,
   .boxpopulaires p {
     font-size: 16px;
@@ -1027,21 +1015,21 @@ footer ul li {
 
 /* ********************** Etoiles ******************/
 
-
-
-
   .etoiles,
   .etoilegrise {
     font-size: 1.4vw;
   }
+
   .etoilespopulaires {
     font-size: 1.4vw;
   }
+
   .imageactivites_a,
   .imageactivites_b,
   .imageactivites_c {
     padding-bottom: 0.2vw;
   }
+
   figcaption {
     font-size: 1.2vw;
     margin-top: 5px;
@@ -1058,32 +1046,31 @@ footer ul li {
   justify-content: space-between;
   margin: 0px 0 10px 0;
   width: 85%;
-}
-.charticon {
-  margin: 20px;
-  font-size: 6vw;
-}
+  }
+  .charticon {
+    margin: 20px;
+    font-size: 6vw;
+  }
 
   .populaires {
-      width: 100%;
-      border-radius: 0;
-      margin-top: 30px;
-    }
+    width: 100%;
+    border-radius: 0;
+    margin-top: 30px;
+  }
    
-    .populaires p {
-      font-size: 3vw;
-      margin-bottom: 0;
-    }
+  .populaires p {
+    font-size: 3vw;
+    margin-bottom: 0;
+  }
     
-    .boxpopulaires p {
-      margin-bottom: 8vw;
-    }
+  .boxpopulaires p {
+    margin-bottom: 8vw;
+  }
   .boxpopulaires {
-      width: 85%;
-      height: 145px;
-      margin-bottom: 5px;
-    }
-
+    width: 85%;
+    height: 145px;
+    margin-bottom: 5px;
+  }
 
   .asidepopulaires {
     -webkit-box-orient: vertical;
@@ -1107,9 +1094,7 @@ footer ul li {
     font-size: 3vw;
   }
 
-  
   /****************** activite ************************/
-  
   
   #Activites figcaption {
     margin-left: 4vw;
@@ -1126,6 +1111,7 @@ footer ul li {
     margin-left: 20px;
     margin-bottom: 30px;
   }
+
   .sectionactivites {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1139,12 +1125,14 @@ footer ul li {
     margin-bottom: 25px;
     width: 100%;
   }
+
   .boxactivites_1 {
     width: 85%;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
   }
+
   .boxactivites_2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1155,6 +1143,7 @@ footer ul li {
     -ms-flex-align: center;
     align-items: center;
   }
+
   .boxactivites_a,
   .boxactivites_b,
   .boxactivites_c {
@@ -1173,10 +1162,8 @@ footer ul li {
     margin-top: 2.5vmax;
   }
   
-
-
-
   /************************* footer ************************/
+
   footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1194,6 +1181,7 @@ footer ul li {
   footer ul li {
     font-size: 16px;
   }
+
   .apropos,
   .hebergementsfooter,
   .assistance {
@@ -1203,11 +1191,9 @@ footer ul li {
 }  
 
 
+/* ******************  Media Queries - TABLETTES ******************/
 
-
-
-/* v3   TABLETTES ****/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
   * {
     margin: 0;
@@ -1216,16 +1202,18 @@ footer ul li {
   #container-nav {
     width: 98%;   /* Permettre une marge à toute la page du HEADER jusqu'au FOOTER */
   }
+
   /* MAIN Recherche CONTAINER  */
   .recherche h1 {
     margin-top: 5vw;
   }
+
   .populaires {
     width: 50%;
-
   }
+
   h2 {
-    font-size: 1.8vw;
+    font-size: 3.8vw;
   }
 
   main {
@@ -1248,18 +1236,24 @@ footer ul li {
     border-radius: 25px;
     margin-top: 30px;
   }
+
   .boxpopulaires {
     width: 28vw;
     height: 12vw;
-    
   }
 
+  .charticon {
+    position: absolute;
+    top: 3.3vw;
+    right: 3vw;
+    font-size: 4.6vw;
+  }
   .container-hebergement {
     margin: 2.5vw 3vw 0vw 1.5vw;
     width: 96%;
+    padding-bottom: 25px;
   }
   
-
   .container {
     width: 100%;
   }
@@ -1272,27 +1266,25 @@ footer ul li {
   h4 {
     font-size: 1.7vw;
   }
-    .boxhebergements p,
+  .boxhebergements p,
   .boxpopulaires p {
     font-size: 1.5vw;
   }
 
   .etoiles,
   .etoilegrise {
-    font-size: 1.4vw;
+    font-size: 1.8vw;
   }
   .etoilespopulaires {
-    font-size: 1.4vw;
+    font-size: 1.8vw;
   }
 
   .etoilespopulaires {
-    margin-top: 2vw;
+    margin-top: 1.8vw;
   }
   
+  /* POPULAIRES -TABLETTE **/
 
-
-
-  /* TABLETTE POPULAIRES **/
   .populaires {
     width: 96%;
     border-radius: 15px;
@@ -1306,7 +1298,6 @@ footer ul li {
     font-weight: 600;
   }
   
-
 .boxpopulaires {
     width: 30%;
     height: 85px;
@@ -1323,84 +1314,93 @@ footer ul li {
     border-bottom-left-radius: 15px;
     width: 30%;
   }
+
   .plusderesultats {
     font-weight: bold;
-    font-size: 1.8vmax;
+    font-size: 2vmax;
     margin-left: 2.8vw;
     margin: 03.3vw 0 1.2vw 2.8vw;
     padding-bottom: 3.5vw;
   }
 
 /***** CHANGEMENT **/
-#Activites {
-  width: 100vw;
-  margin: 0;
-}
-#Activites h2 {
-  font-size: 3.8vw;
-  margin-left: 4vw;
-  margin-bottom: 30px;
-}
-.sectionactivites {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  height: auto;
-  margin: 0 30px;
-  margin-bottom: 2.5vw;
-}
-.boxactivites_1 {
-  width: 33%;
-}
-.boxactivites_2 {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 66%;
-}
-.boxactivites_a,
-.boxactivites_b,
-.boxactivites_c {
-  width: 28vw;
-  height: 24vw;
-  margin-bottom: 25px;
-}
-.boxactivites_b,
-.boxactivites_c {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  margin-left: 0.7vw;
-}
-.imageactivites_a,
-.imageactivites_b,
-.imageactivites_c {
-  height: 18vw;
-  padding-bottom: 1vw;
-}
-figcaption {
-  font-size: 1.8vw;
-}
-footer {
-  padding-top: 3vw;
-}
-footer h5 {
-  font-size: 2vw;
-}
-footer ul li {
-  font-size: 1.6vw;
-}
 
-}
+  #Activites {
+    width: 100vw;
+    margin: 0;
+  }
+  #Activites h2 {
+    font-size: 3.8vw;
+    margin-left: 4vw;
+    margin-bottom: 30px;
+  }
 
+  .sectionactivites {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: auto;
+    margin: 0 30px;
+    margin-bottom: 2.5vw;
+  }
 
+  .boxactivites_1 {
+    width: 33%;
+  }
+  .boxactivites_2 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 66%;
+  }
 
+  .boxactivites_a,
+  .boxactivites_b,
+  .boxactivites_c {
+    width: 28vw;
+    height: 24vw;
+    margin-bottom: 25px;
+  }
+  .boxactivites_b,
+  .boxactivites_c {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-left: 0.7vw;
+  }
+  .imageactivites_a,
+  .imageactivites_b,
+  .imageactivites_c {
+    height: 18vw;
+    padding-bottom: 1vw;
+  }
+
+  figcaption {
+    font-size: 1.8vw;
+  }
+
+  footer {
+    padding-top: 3vw;
+  }
+
+  footer h5 {
+    font-size: 2.1vw;
+  }
+
+  footer ul li {
+    font-size: 1.6vw;
+  }
 
 /***********************************************************************************************************/
 /***************************************Media Queries SMALL DESKTOP ************************/
 
-@media only screen and (min-width: 1025px) and (max-width: 11320px) {
-
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  main,
+  nav,
+  .endPage {
+    width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
-
